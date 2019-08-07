@@ -4,7 +4,12 @@ import optparse
 
 def portScan(tgtHost, tgtPorts):
   try:
-    tgtIP = gethostbyname
+    tgtIP = gethostbyname(tgtHost)
+  except:
+    print("Could not resolve host")
+    return
+  try:
+    
 
 def main():
   parser = optparse.OptionParse("usage %prog -H <hostname> -p <port number(s)>")
@@ -20,3 +25,4 @@ def main():
     print(parser.usage)
     exit(0)
   portScan(tgtHost, tgtPorts)
+ 
